@@ -1,0 +1,20 @@
+class sample(object):
+    def __init__(self,*args,**kwargs):
+        print('init)
+        super(sample,self).__init__(*args,**kwargs)
+    
+    def __new__(cls,*args,**kwargs):
+        print('new',cls)
+        return super(sample,cls).__new__(cls,*args,**kwargs)
+    def __call__(self,*args,**kwargs):
+        print('call')
+        
+ s = sample()
+ s()
+ 
+ 执行结果：
+ 
+ new <class.__main__sample>
+ init
+ call
+ 
